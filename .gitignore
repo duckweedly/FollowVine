@@ -1,0 +1,13 @@
+.worktrees/
+node_modules/
+.next/
+out/
+dist/
+build/
+coverage/
+*.log
+.env*
+!.env.example
+storage/generated/*
+!storage/generated/.gitkeep
+.DS_Store
