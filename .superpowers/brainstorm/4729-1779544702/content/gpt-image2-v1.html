@@ -1,0 +1,49 @@
+<h2>FollowVine V1: GPT-Image-2 Pixel Flipbook</h2>
+<p class="subtitle">每页都是一张生成图；业务层负责路径、点击、缓存、分享和重试。</p>
+
+<div class="mockup">
+  <div class="mockup-header">Core Loop</div>
+  <div class="mockup-body">
+    <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:16px;align-items:stretch">
+      <div style="border:1px solid #ddd;border-radius:8px;padding:16px;background:#fff">
+        <h3>1. 输入主题</h3>
+        <p>中文 topic + 受众 + 风格</p>
+        <p style="font-size:13px;color:#666">例：RAG 是怎么工作的，讲给产品经理</p>
+      </div>
+      <div style="border:1px solid #ddd;border-radius:8px;padding:16px;background:#fff">
+        <h3>2. 生成整页图解</h3>
+        <p>gpt-image-2 生成 16:9 页面</p>
+        <p style="font-size:13px;color:#666">图片本身就是学习页面</p>
+      </div>
+      <div style="border:1px solid #ddd;border-radius:8px;padding:16px;background:#fff">
+        <h3>3. 点击下钻</h3>
+        <p>记录 x/y 坐标 + 父图 + 路径上下文</p>
+        <p style="font-size:13px;color:#666">下一页聚焦这个区域</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="options">
+  <div class="option" data-choice="v1_pixel" onclick="toggleSelect(this)">
+    <div class="letter">A</div>
+    <div class="content">
+      <h3>纯像素 V1</h3>
+      <p>最快接近 Flipbook 体验。热点不预先标注，用户点任意位置；后台用父图 + 坐标 + prompt 生成下一页。</p>
+    </div>
+  </div>
+  <div class="option" data-choice="v1_hotspot_overlay" onclick="toggleSelect(this)">
+    <div class="letter">B</div>
+    <div class="content">
+      <h3>像素图 + 隐性热点</h3>
+      <p>图片仍由 gpt-image-2 生成，但业务层生成 3-6 个推荐点击点，用透明层辅助命中和更稳的下钻。</p>
+    </div>
+  </div>
+  <div class="option" data-choice="v1_hybrid" onclick="toggleSelect(this)">
+    <div class="letter">C</div>
+    <div class="content">
+      <h3>像素图 + 来源面板</h3>
+      <p>中间是完整图片；右侧保留文本来源、路径和节点解释，降低“图片说错了没人发现”的风险。</p>
+    </div>
+  </div>
+</div>

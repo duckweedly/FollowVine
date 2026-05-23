@@ -1,0 +1,75 @@
+<h2>FollowVine V1: Style Presets</h2>
+<p class="subtitle">每个风格都是一段固定 prompt，进入缓存 fingerprint；同一路径内强制保持同一风格。</p>
+
+<div class="cards">
+  <div class="card" data-choice="watercolor_book" onclick="toggleSelect(this)">
+    <div class="card-image">
+      <div style="height:180px;background:#f7f0df;border:1px solid #e1d3b8;border-radius:6px;padding:18px;font-family:serif;color:#333">
+        <div style="text-align:center;font-size:22px;margin-bottom:18px">RAG 如何工作</div>
+        <div style="display:flex;gap:12px;align-items:center;justify-content:center">
+          <div style="width:66px;height:46px;background:#c9dfd4;border:2px solid #333;border-radius:50%"></div>
+          <div style="font-size:28px">→</div>
+          <div style="width:78px;height:58px;background:#c8d8ec;border:2px solid #333;border-radius:8px"></div>
+          <div style="font-size:28px">→</div>
+          <div style="width:66px;height:46px;background:#ead6a7;border:2px solid #333;border-radius:50%"></div>
+        </div>
+      </div>
+    </div>
+    <div class="card-body">
+      <h3>温暖水彩图解书</h3>
+      <p>最接近 illustrated-explainer-spec，适合通用知识、机制解释、长期风格一致。</p>
+    </div>
+  </div>
+
+  <div class="card" data-choice="chinese_science_magazine" onclick="toggleSelect(this)">
+    <div class="card-image">
+      <div style="height:180px;background:#fafafa;border:1px solid #d8d8d8;border-radius:6px;padding:18px;font-family:Arial;color:#111">
+        <div style="font-size:13px;color:#c5162e;font-weight:bold">知识图解 VOL.01</div>
+        <div style="font-size:28px;font-weight:800;margin:8px 0 18px">注意力机制</div>
+        <div style="display:grid;grid-template-columns:1.1fr .9fr;gap:10px">
+          <div style="height:70px;background:#111;color:#fff;display:flex;align-items:center;justify-content:center;font-size:20px">Q/K/V</div>
+          <div style="height:70px;background:#f2cf3a;display:flex;align-items:center;justify-content:center;font-size:20px">Softmax</div>
+        </div>
+      </div>
+    </div>
+    <div class="card-body">
+      <h3>中文科普杂志</h3>
+      <p>更现代、更适合分享传播；但文字排版要求更高，生成失败率可能略高。</p>
+    </div>
+  </div>
+
+  <div class="card" data-choice="whiteboard_marker" onclick="toggleSelect(this)">
+    <div class="card-image">
+      <div style="height:180px;background:#fff;border:1px solid #ddd;border-radius:6px;padding:18px;font-family:'Comic Sans MS',Arial;color:#222">
+        <div style="font-size:24px;font-weight:bold;margin-bottom:20px">OAuth 流程</div>
+        <div style="display:flex;justify-content:space-around;align-items:center">
+          <div style="border:3px solid #1c78c0;border-radius:8px;padding:12px">用户</div>
+          <div style="color:#e34b38;font-size:32px">→</div>
+          <div style="border:3px solid #27a06d;border-radius:8px;padding:12px">应用</div>
+          <div style="color:#e34b38;font-size:32px">→</div>
+          <div style="border:3px solid #111;border-radius:8px;padding:12px">授权</div>
+        </div>
+      </div>
+    </div>
+    <div class="card-body">
+      <h3>白板手绘</h3>
+      <p>适合技术流程、培训课；中文小字相对更容易保持清楚。</p>
+    </div>
+  </div>
+
+  <div class="card" data-choice="chalkboard" onclick="toggleSelect(this)">
+    <div class="card-image">
+      <div style="height:180px;background:#1f3a32;border:1px solid #10231d;border-radius:6px;padding:18px;font-family:serif;color:#f4f1df">
+        <div style="font-size:25px;text-align:center;margin-bottom:20px">牛顿第二定律</div>
+        <div style="font-size:42px;text-align:center;margin-bottom:16px">F = ma</div>
+        <div style="display:flex;gap:12px;justify-content:center;color:#d7e9d1">
+          <span>力</span><span>×</span><span>质量</span><span>×</span><span>加速度</span>
+        </div>
+      </div>
+    </div>
+    <div class="card-body">
+      <h3>黑板粉笔</h3>
+      <p>适合理科和教学氛围；不适合作为默认，因为深色页面和复杂图会更累。</p>
+    </div>
+  </div>
+</div>
