@@ -1,0 +1,38 @@
+{
+  "name": "followvine",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "tsc --noEmit",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run --passWithNoTests",
+    "test:watch": "vitest",
+    "test:unit": "vitest run tests/unit --passWithNoTests",
+    "test:integration": "vitest run tests/integration --passWithNoTests",
+    "test:e2e": "playwright test",
+    "verify": "npm run lint && npm run typecheck && npm run build && npm run test && npm run test:e2e"
+  },
+  "dependencies": {
+    "next": "16.2.6",
+    "openai": "6.39.0",
+    "pg": "8.21.0",
+    "react": "19.2.6",
+    "react-dom": "19.2.6",
+    "sharp": "0.34.5"
+  },
+  "devDependencies": {
+    "@playwright/test": "1.60.0",
+    "@testing-library/jest-dom": "6.9.1",
+    "@testing-library/react": "16.3.2",
+    "@types/node": "25.9.1",
+    "@types/pg": "8.20.0",
+    "@types/react": "19.2.15",
+    "@types/react-dom": "19.2.3",
+    "jsdom": "29.1.1",
+    "typescript": "6.0.3",
+    "vitest": "4.1.7"
+  }
+}

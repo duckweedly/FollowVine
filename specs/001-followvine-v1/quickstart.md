@@ -11,9 +11,9 @@
 
 1. Install dependencies.
 2. Configure the server-only image generation API key and PostgreSQL connection string in local environment variables.
-3. Apply database schema setup for page, path, and share metadata.
+3. Apply database schema setup with `psql "$DATABASE_URL" -f db/schema.sql`.
 4. Start the Next.js development server.
-4. Open the app in a browser.
+5. Open the app in a browser.
 
 ## Acceptance Walkthrough
 

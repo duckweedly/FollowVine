@@ -66,7 +66,7 @@ app/
 │   └── page/
 │       └── route.ts
 ├── generated/
-│   └── [pageId].png/
+│   └── [...pagePath]/
 │       └── route.ts
 └── share/
     └── [shareId]/

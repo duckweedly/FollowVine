@@ -18,11 +18,11 @@
 
 **Purpose**: Initialize the Next.js TypeScript app, PostgreSQL metadata access, test tooling, and runtime generated image storage layout.
 
-- [ ] T001 Initialize Next.js TypeScript project metadata, PostgreSQL dependency, and scripts in `package.json`
-- [ ] T002 Configure TypeScript and Next.js settings in `tsconfig.json` and `next.config.ts`
-- [ ] T003 [P] Create global app shell and base styles in `app/layout.tsx` and `app/globals.css`
-- [ ] T004 [P] Configure unit, integration, and browser test runners in `package.json` and `playwright.config.ts`
-- [ ] T005 [P] Configure local runtime storage ignores and generated image placeholder in `.gitignore` and `storage/generated/.gitkeep`
+- [X] T001 Initialize Next.js TypeScript project metadata, PostgreSQL dependency, and scripts in `package.json`
+- [X] T002 Configure TypeScript and Next.js settings in `tsconfig.json` and `next.config.ts`
+- [X] T003 [P] Create global app shell and base styles in `app/layout.tsx` and `app/globals.css`
+- [X] T004 [P] Configure unit, integration, and browser test runners in `package.json` and `playwright.config.ts`
+- [X] T005 [P] Configure local runtime storage ignores and generated image placeholder in `.gitignore` and `storage/generated/.gitkeep`
 
 ---
 
@@ -32,14 +32,14 @@
 
 **Critical**: No user story work can begin until this phase is complete.
 
-- [ ] T006 [P] Define Page, ExplainerPath, StylePreset, ShareLink, and UI generation state types in `lib/types.ts`
-- [ ] T007 [P] Define launch-visible and hidden style presets in `lib/styles.ts`
-- [ ] T008 [P] Implement topic normalization and deterministic page ID helpers in `lib/page-ids.ts`
-- [ ] T009 [P] Implement request validation and unsafe-topic rejection helpers in `lib/validation.ts`
-- [ ] T010 Implement PostgreSQL metadata access and generated image persistence helpers in `lib/db.ts` and `lib/page-store.ts`
-- [ ] T011 [P] Add page identity unit tests in `tests/unit/page-ids.test.ts`
-- [ ] T012 [P] Add request validation and unsafe-topic rejection unit tests in `tests/unit/validation.test.ts`
-- [ ] T013 [P] Add style preset whitelist unit tests in `tests/unit/styles.test.ts`
+- [X] T006 [P] Define Page, ExplainerPath, StylePreset, ShareLink, and UI generation state types in `lib/types.ts`
+- [X] T007 [P] Define launch-visible and hidden style presets in `lib/styles.ts`
+- [X] T008 [P] Implement topic normalization and deterministic page ID helpers in `lib/page-ids.ts`
+- [X] T009 [P] Implement request validation and unsafe-topic rejection helpers in `lib/validation.ts`
+- [X] T010 Implement PostgreSQL metadata access and generated image persistence helpers in `lib/db.ts` and `lib/page-store.ts`
+- [X] T011 [P] Add page identity unit tests in `tests/unit/page-ids.test.ts`
+- [X] T012 [P] Add request validation and unsafe-topic rejection unit tests in `tests/unit/validation.test.ts`
+- [X] T013 [P] Add style preset whitelist unit tests in `tests/unit/styles.test.ts`
 
 **Checkpoint**: Foundation ready; user story implementation can now begin.
 
@@ -53,19 +53,19 @@
 
 ### Tests for User Story 1
 
-- [ ] T014 [P] [US1] Add root page route contract tests in `tests/integration/page-api-root.test.ts`
-- [ ] T015 [P] [US1] Add start-screen browser acceptance tests for recommended demo and manual topic generation in `tests/e2e/root-generation.spec.ts`
+- [X] T014 [P] [US1] Add root page route contract tests in `tests/integration/page-api-root.test.ts`
+- [X] T015 [P] [US1] Add start-screen browser acceptance tests for recommended demo and manual topic generation in `tests/e2e/root-generation.spec.ts`
 
 ### Implementation for User Story 1
 
-- [ ] T016 [P] [US1] Create style picker component in `components/StylePicker.tsx`
-- [ ] T017 [P] [US1] Create recommended demo and topic entry component in `components/StartScreen.tsx`
-- [ ] T018 [P] [US1] Create generated page display component in `components/ExplainerViewer.tsx`
-- [ ] T019 [US1] Implement root image generation prompt and server-only OpenAI wrapper in `lib/image-generation.ts`
-- [ ] T020 [US1] Implement root page POST handler in `app/api/page/route.ts`
-- [ ] T021 [US1] Implement generated PNG retrieval route in `app/generated/[pageId].png/route.ts`
-- [ ] T022 [US1] Wire start-screen generation state and generated page display in `app/page.tsx`
-- [ ] T023 [US1] Integrate root validation errors and generation failure messages in `app/page.tsx` and `components/StartScreen.tsx`
+- [X] T016 [P] [US1] Create style picker component in `components/StylePicker.tsx`
+- [X] T017 [P] [US1] Create recommended demo and topic entry component in `components/StartScreen.tsx`
+- [X] T018 [P] [US1] Create generated page display component in `components/ExplainerViewer.tsx`
+- [X] T019 [US1] Implement root image generation prompt and server-only OpenAI wrapper in `lib/image-generation.ts`
+- [X] T020 [US1] Implement root page POST handler in `app/api/page/route.ts`
+- [X] T021 [US1] Implement generated PNG retrieval route in `app/generated/[...pagePath]/route.ts`
+- [X] T022 [US1] Wire start-screen generation state and generated page display in `app/page.tsx`
+- [X] T023 [US1] Integrate root validation errors and generation failure messages in `app/page.tsx` and `components/StartScreen.tsx`
 
 **Checkpoint**: User Story 1 works independently as the MVP.
 
@@ -79,16 +79,16 @@
 
 ### Tests for User Story 2
 
-- [ ] T024 [P] [US2] Add child page route contract tests in `tests/integration/page-api-child.test.ts`
-- [ ] T025 [P] [US2] Add drill-down and duplicate-click browser acceptance tests in `tests/e2e/drill-down.spec.ts`
+- [X] T024 [P] [US2] Add child page route contract tests in `tests/integration/page-api-child.test.ts`
+- [X] T025 [P] [US2] Add drill-down and duplicate-click browser acceptance tests in `tests/e2e/drill-down.spec.ts`
 
 ### Implementation for User Story 2
 
-- [ ] T026 [P] [US2] Implement red-circle reference image helper in `lib/red-circle.ts`
-- [ ] T027 [US2] Extend image generation wrapper for child prompts and marked reference images in `lib/image-generation.ts`
-- [ ] T028 [US2] Extend page POST handler for child generation requests in `app/api/page/route.ts`
-- [ ] T029 [US2] Add normalized click coordinate handling and duplicate-click blocking in `components/ExplainerViewer.tsx`
-- [ ] T030 [US2] Append generated child pages and preserve selected style in `app/page.tsx`
+- [X] T026 [P] [US2] Implement red-circle reference image helper in `lib/red-circle.ts`
+- [X] T027 [US2] Extend image generation wrapper for child prompts and marked reference images in `lib/image-generation.ts`
+- [X] T028 [US2] Extend page POST handler for child generation requests in `app/api/page/route.ts`
+- [X] T029 [US2] Add normalized click coordinate handling and duplicate-click blocking in `components/ExplainerViewer.tsx`
+- [X] T030 [US2] Append generated child pages and preserve selected style in `app/page.tsx`
 
 **Checkpoint**: User Stories 1 and 2 both work independently.
 
@@ -102,14 +102,14 @@
 
 ### Tests for User Story 3
 
-- [ ] T031 [P] [US3] Add history navigation and branch truncation browser tests in `tests/e2e/history-navigation.spec.ts`
+- [X] T031 [P] [US3] Add history navigation and branch truncation browser tests in `tests/e2e/history-navigation.spec.ts`
 
 ### Implementation for User Story 3
 
-- [ ] T032 [P] [US3] Create history strip component in `components/HistoryStrip.tsx`
-- [ ] T033 [US3] Add Back and thumbnail navigation state handling in `app/page.tsx`
-- [ ] T034 [US3] Implement branch truncation when generating from an earlier page in `app/page.tsx`
-- [ ] T035 [US3] Add keyboard navigation support for history thumbnails in `components/HistoryStrip.tsx`
+- [X] T032 [P] [US3] Create history strip component in `components/HistoryStrip.tsx`
+- [X] T033 [US3] Add Back and thumbnail navigation state handling in `app/page.tsx`
+- [X] T034 [US3] Implement branch truncation when generating from an earlier page in `app/page.tsx`
+- [X] T035 [US3] Add keyboard navigation support for history thumbnails in `components/HistoryStrip.tsx`
 
 **Checkpoint**: User Stories 1, 2, and 3 all work independently.
 
@@ -123,17 +123,17 @@
 
 ### Tests for User Story 4
 
-- [ ] T036 [P] [US4] Add public unlisted share route integration tests in `tests/integration/share-route.test.ts`
-- [ ] T037 [P] [US4] Add cache reuse and share browser acceptance tests in `tests/e2e/share-and-cache.spec.ts`
+- [X] T036 [P] [US4] Add public unlisted share route integration tests in `tests/integration/share-route.test.ts`
+- [X] T037 [P] [US4] Add cache reuse and share browser acceptance tests in `tests/e2e/share-and-cache.spec.ts`
 
 ### Implementation for User Story 4
 
-- [ ] T038 [P] [US4] Implement public unlisted share persistence using PostgreSQL in `lib/share-store.ts`
-- [ ] T039 [US4] Add root and child cache-hit behavior in `app/api/page/route.ts` and `lib/page-store.ts`
-- [ ] T040 [US4] Create share controls component in `components/ShareControls.tsx`
-- [ ] T041 [US4] Implement public share page in `app/share/[shareId]/page.tsx`
-- [ ] T042 [US4] Wire share creation and opening into `app/page.tsx` and `components/ShareControls.tsx`
-- [ ] T043 [US4] Add missing shared content recoverable error handling in `app/share/[shareId]/page.tsx`
+- [X] T038 [P] [US4] Implement public unlisted share persistence using PostgreSQL in `lib/share-store.ts`
+- [X] T039 [US4] Add root and child cache-hit behavior in `app/api/page/route.ts` and `lib/page-store.ts`
+- [X] T040 [US4] Create share controls component in `components/ShareControls.tsx`
+- [X] T041 [US4] Implement public share page in `app/share/[shareId]/page.tsx`
+- [X] T042 [US4] Wire share creation and opening into `app/page.tsx` and `components/ShareControls.tsx`
+- [X] T043 [US4] Add missing shared content recoverable error handling in `app/share/[shareId]/page.tsx`
 
 **Checkpoint**: All user stories are independently functional.
 
@@ -143,11 +143,11 @@
 
 **Purpose**: Security, verification, and acceptance hardening across all stories.
 
-- [ ] T044 [P] Add credential, prompt, and local path exposure browser tests in `tests/e2e/security-boundaries.spec.ts`
-- [ ] T045 [P] Add generated image path traversal tests in `tests/integration/generated-image-route.test.ts`
-- [ ] T046 [P] Add storage persistence restart coverage in `tests/integration/storage-persistence.test.ts`
-- [ ] T047 Add full verification script for lint, typecheck, unit, integration, and e2e checks in `package.json`
-- [ ] T048 Run the quickstart acceptance walkthrough and update deviations in `specs/001-followvine-v1/quickstart.md`
+- [X] T044 [P] Add credential, prompt, and local path exposure browser tests in `tests/e2e/security-boundaries.spec.ts`
+- [X] T045 [P] Add generated image path traversal tests in `tests/integration/generated-image-route.test.ts`
+- [X] T046 [P] Add storage persistence restart coverage in `tests/integration/storage-persistence.test.ts`
+- [X] T047 Add full verification script for lint, typecheck, unit, integration, and e2e checks in `package.json`
+- [X] T048 Run the quickstart acceptance walkthrough and update deviations in `specs/001-followvine-v1/quickstart.md`
 
 ---
 
