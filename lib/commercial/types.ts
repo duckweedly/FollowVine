@@ -75,3 +75,50 @@ export type ModelChannel = {
   createdAt: string
   updatedAt: string
 }
+
+export type CreditPack = {
+  id: string
+  name: string
+  priceCents: number
+  credits: number
+  bonusCredits: number
+  isActive: boolean
+  createdAt: string
+  updatedAt: string
+}
+
+export type Order = {
+  id: string
+  userId: string
+  orderType: OrderType
+  status: OrderStatus
+  amountCents: number
+  provider: string
+  providerTradeNo: string | null
+  productId: string
+  paidAt: string | null
+  fulfilledAt: string | null
+  createdAt: string
+  updatedAt: string
+}
+
+export type PaymentEvent = {
+  id: string
+  orderId: string | null
+  provider: string
+  providerTradeNo: string | null
+  eventType: 'notify' | 'manual_correction'
+  payload: Record<string, unknown>
+  isValid: boolean
+  createdAt: string
+}
+
+export type CreateOrderInput = {
+  id: string
+  userId: string
+  orderType: OrderType
+  amountCents: number
+  productId: string
+  provider: string
+  now: string
+}

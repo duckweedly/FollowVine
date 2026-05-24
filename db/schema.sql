@@ -105,6 +105,7 @@ create table if not exists orders (
 
 create index if not exists orders_user_id_idx on orders(user_id);
 create index if not exists orders_status_idx on orders(status);
+create unique index if not exists orders_provider_trade_no_unique_idx on orders(provider, provider_trade_no) where provider_trade_no is not null;
 
 create table if not exists model_channels (
   id text primary key,
@@ -169,3 +170,32 @@ create table if not exists system_settings (
   value jsonb not null,
   updated_at timestamptz not null
 );
+
+create table if not exists credit_packs (
+  id text primary key,
+  name text not null,
+  price_cents integer not null check (price_cents >= 0),
+  credits integer not null check (credits > 0),
+  bonus_credits integer not null default 0 check (bonus_credits >= 0),
+  is_active boolean not null default true,
+  created_at timestamptz not null,
+  updated_at timestamptz not null
+);
+
+create index if not exists credit_packs_active_idx on credit_packs(is_active);
+
+alter table orders add column if not exists fulfilled_at timestamptz;
+
+create table if not exists payment_events (
+  id text primary key,
+  order_id text references orders(id),
+  provider text not null,
+  provider_trade_no text,
+  event_type text not null check (event_type in ('notify', 'manual_correction')),
+  payload jsonb not null,
+  is_valid boolean not null,
+  created_at timestamptz not null
+);
+
+create index if not exists payment_events_order_id_idx on payment_events(order_id);
+create index if not exists payment_events_provider_trade_no_idx on payment_events(provider_trade_no);
