@@ -20,7 +20,10 @@ export function ExplainerViewer({ page, isGenerating = false, onDrillDown }: Exp
 
   return (
     <section className="explainer-viewer">
-      <h2>{page.initialQuery ?? '继续图解'}</h2>
+      <div className="viewer-heading">
+        <p>点击图中任意位置继续下钻</p>
+        <h2>{page.initialQuery ?? '继续图解'}</h2>
+      </div>
       <img src={page.imageUrl} alt={page.initialQuery ?? page.id} onClick={handleClick} />
     </section>
   )

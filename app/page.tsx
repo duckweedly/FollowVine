@@ -89,7 +89,7 @@ export default function Home() {
   const currentPage = pages[currentIndex]
 
   return (
-    <main>
+    <main className="app-shell">
       <StartScreen
         query={query}
         style={style}
@@ -99,9 +99,11 @@ export default function Home() {
         onStyleChange={setStyle}
         onGenerate={generateRootPage}
       />
-      <HistoryStrip pages={pages} currentIndex={currentIndex} onSelect={setCurrentIndex} onBack={() => setCurrentIndex((index) => Math.max(0, index - 1))} />
-      <ShareControls shareUrl={shareUrl} isDisabled={pages.length === 0} onCreateShare={createShare} />
-      {currentPage ? <ExplainerViewer page={currentPage} isGenerating={isGenerating} onDrillDown={generateChildPage} /> : null}
+      <div className="workspace-panel">
+        <HistoryStrip pages={pages} currentIndex={currentIndex} onSelect={setCurrentIndex} onBack={() => setCurrentIndex((index) => Math.max(0, index - 1))} />
+        <ShareControls shareUrl={shareUrl} isDisabled={pages.length === 0} onCreateShare={createShare} />
+        {currentPage ? <ExplainerViewer page={currentPage} isGenerating={isGenerating} onDrillDown={generateChildPage} /> : null}
+      </div>
     </main>
   )
 }

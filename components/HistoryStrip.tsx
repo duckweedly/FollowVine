@@ -11,7 +11,7 @@ export function HistoryStrip({ pages, currentIndex, onSelect, onBack }: HistoryS
   if (pages.length === 0) return null
 
   return (
-    <nav aria-label="图解历史">
+    <nav className="history-strip" aria-label="图解历史">
       <button type="button" onClick={onBack} disabled={currentIndex === 0}>
         返回上一页
       </button>

@@ -25,26 +25,28 @@ export function StartScreen({ query, style, error, isGenerating, onQueryChange, 
       <h1>FollowVine</h1>
       <p>输入一个知识点，生成可点击下钻的中文图解页。</p>
 
-      <div aria-label="推荐 Demo">
+      <div className="topic-chips" aria-label="推荐 Demo">
         {RECOMMENDED_TOPICS.map((topic) => (
-          <button key={topic} type="button" onClick={() => onQueryChange(topic)}>
+          <button className="topic-chip" key={topic} type="button" onClick={() => onQueryChange(topic)}>
             {topic}
           </button>
         ))}
       </div>
 
-      <label>
-        知识主题
-        <input aria-label="知识主题" value={query} onChange={(event) => onQueryChange(event.target.value)} />
-      </label>
+      <div className="prompt-card">
+        <label className="field-label">
+          <span>知识主题</span>
+          <input aria-label="知识主题" value={query} onChange={(event) => onQueryChange(event.target.value)} placeholder="比如：RAG 是怎么工作的" />
+        </label>
 
-      <StylePicker value={style} onChange={onStyleChange} />
+        <StylePicker value={style} onChange={onStyleChange} />
 
-      <button type="button" onClick={onGenerate} disabled={isGenerating}>
-        {isGenerating ? '生成中…' : '生成图解'}
-      </button>
+        <button className="primary-button" type="button" onClick={onGenerate} disabled={isGenerating}>
+          {isGenerating ? '生成中…' : '生成图解'}
+        </button>
+      </div>
 
-      {error ? <p role="alert">{error}</p> : null}
+      {error ? <p className="error-message" role="alert">{error}</p> : null}
     </section>
   )
 }
